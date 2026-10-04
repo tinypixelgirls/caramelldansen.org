@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../main.css">
+<link rel="icon" href="../saori-heart.gif">
+<title>Alex's Software</title>
+<style>
+body { background-color: SlateGray; color: white; font-family: sans-serif; margin: 0 16px 40px; }
+h1, p { text-align: center; }
+.apps { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; max-width: 1100px; margin: 0 auto; }
+.app { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 16px; text-align: center; color: white; border-radius: 8px; background: rgba(0, 0, 0, 0.15); }
+.app:hover { background: rgba(0, 0, 0, 0.3); }
+.app img { image-rendering: pixelated; }
+.app b { font-size: 1.3em; color: pink; }
+.app small { opacity: 0.7; }
+</style>
+</head>
+<body>
+
+<h1>software</h1>
+<p>tiny programs for windows 10/11. click one to download it. no installers, no settings, just the exe.</p>
+
+<div class="apps">
+    <a class="app" href="notes.exe" download>
+        <img src="notes.png" width="128" height="128" alt="">
+        <b>notes</b>
+        <span>a sticky note that saves itself</span>
+        <small>notes.exe · 40 KB</small>
+    </a>
+    <a class="app" href="calc.exe" download>
+        <img src="calc.png" width="128" height="128" alt="">
+        <b>calc</b>
+        <span>a calculator</span>
+        <small>calc.exe · 44 KB</small>
+    </a>
+    <a class="app" href="tripeaks.exe" download>
+        <img src="tripeaks.png" width="128" height="128" alt="">
+        <b>tripeaks</b>
+        <span>tripeaks solitaire</span>
+        <small>tripeaks.exe · 40 KB</small>
+    </a>
+    <a class="app" href="noise.exe" download>
+        <img src="noise.png" width="128" height="128" alt="">
+        <b>noise</b>
+        <span>white noise, brown noise or rain</span>
+        <small>noise.exe · 48 KB</small>
+    </a>
+    <a class="app" href="draw.exe" download>
+        <img src="draw.png" width="128" height="128" alt="">
+        <b>draw</b>
+        <span>a pixel-art editor for making icons</span>
+        <small>draw.exe · 46 KB</small>
+    </a>
+    <a class="app" href="snap.exe" download>
+        <img src="snap.png" width="128" height="128" alt="">
+        <b>snap</b>
+        <span>drag an area of the screen to screenshot it</span>
+        <small>snap.exe · 40 KB</small>
+    </a>
+    <a class="app" href="picker.exe" download>
+        <img src="picker.png" width="128" height="128" alt="">
+        <b>picker</b>
+        <span>drag to any pixel to copy its color</span>
+        <small>picker.exe · 36 KB</small>
+    </a>
+    <a class="app" href="clicker.exe" download>
+        <img src="clicker.png" width="128" height="128" alt="">
+        <b>clicker</b>
+        <span>an f6 autoclicker</span>
+        <small>clicker.exe · 37 KB</small>
+    </a>
+    <a class="app" href="clip.exe" download>
+        <img src="clip.png" width="128" height="128" alt="">
+        <b>clip</b>
+        <span>keeps the last 30 seconds of your screen; alt+f9 saves them (experimental)</span>
+        <small>clip.exe · 55 KB</small>
+    </a>
+    <a class="app" href="cleanup.exe" download>
+        <img src="cleanup.png" width="128" height="128" alt="">
+        <b>cleanup</b>
+        <span>closes explorer, irfanview, vlc and private firefox windows in one go</span>
+        <small>cleanup.exe · 35 KB</small>
+    </a>
+</div>
+
+<p><small>windows might say it "protected your pc" the first time, because these aren't signed. click "more info", then "run anyway".</small></p>
+
+</body>
+</html>

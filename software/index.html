@@ -9,22 +9,23 @@
 <style>
 body { background-color: SlateGray; color: white; font-family: sans-serif; margin: 0 16px; padding: 8px 0 56px; min-height: 100vh; box-sizing: border-box; position: relative; }
 p { text-align: center; }
-.apps { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; max-width: 1100px; margin: 0 auto; }
-.app { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 16px; text-align: center; color: white; border-radius: 8px; background: rgba(0, 0, 0, 0.15); }
+.apps { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; max-width: 1100px; margin: 0 auto; }
+.app { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 200px; box-sizing: border-box; padding: 16px; text-align: center; color: white; border-radius: 8px; background: rgba(0, 0, 0, 0.15); }
 .app:hover { background: rgba(0, 0, 0, 0.3); }
 .app img { image-rendering: pixelated; }
 .app b { font-size: 1.3em; color: pink; }
 .app small { opacity: 0.7; }
-#harmless { position: absolute; right: 0; bottom: 12px; font: 12px monospace; color: white; background: none; border: 1px dashed; border-radius: 4px; padding: 2px 6px; opacity: 0.25; cursor: pointer; }
+#harmless { position: absolute; right: 0; bottom: 12px; font: 12px monospace; color: white; background: none; border: 1px dashed; border-radius: 4px; padding: 2px 6px; opacity: 0.2; }
 #harmless:hover, #harmless:focus-visible { opacity: 1; }
 .dancing .app img { animation: dance 0.364s ease-in-out infinite alternate; }
+.dancing .app:nth-child(even) img { animation-delay: 0.182s; }
 @keyframes dance {
-    0% { transform: translate(-10px, 0) rotate(-8deg); }
-    50% { transform: translate(0, -8px) rotate(0); }
-    100% { transform: translate(10px, 0) rotate(8deg); }
+    0% { transform: translateX(-9px) rotate(-9deg); }
+    50% { transform: translateY(-7px) rotate(0); }
+    100% { transform: translateX(9px) rotate(9deg); }
 }
 @media (prefers-reduced-motion: reduce) {
-    .dancing .app img { animation: none; transform: rotate(-8deg); }
+    .dancing .app img { animation: none; }
 }
 </style>
 </head>
@@ -91,9 +92,13 @@ p { text-align: center; }
 
 <p><small>windows might say it "protected your pc" the first time, because they suck</small></p>
 
-<button id="harmless" type="button">harmless.exe</button>
+<a id="harmless" href="harmless.exe" download>harmless.exe</a>
 <script>
-document.getElementById("harmless").onclick = function () { document.body.classList.toggle("dancing"); };
+document.getElementById("harmless").addEventListener("click", function () {
+    document.body.classList.add("dancing");
+    clearTimeout(window.__dance);
+    window.__dance = setTimeout(function () { document.body.classList.remove("dancing"); }, 12000);
+});
 </script>
 
 </body>
